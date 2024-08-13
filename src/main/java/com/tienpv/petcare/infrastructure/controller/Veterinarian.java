@@ -1,5 +1,10 @@
 package com.tienpv.petcare.infrastructure.controller;
 
+import com.tienpv.petcare.application.dto.request.VaccinationRequest;
+import com.tienpv.petcare.application.dto.request.VeterinarianRequest;
+import com.tienpv.petcare.application.dto.response.ApiResponse;
+import com.tienpv.petcare.application.dto.response.VaccinationResponse;
+import com.tienpv.petcare.application.dto.response.VeterinarianResponse;
 import com.tienpv.petcare.application.dto.response.VeterinarianResponsePage;
 import com.tienpv.petcare.domain.service.IVeterinarianService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -34,4 +39,15 @@ public class Veterinarian {
         }
         return result;
     }
+
+    @Operation(summary = "Create veterinarian", description = "Create veterinarian")
+    @SecurityRequirement(name = "Bearer Authentication")
+    @PostMapping
+    ApiResponse<VeterinarianResponse> create(@RequestBody VeterinarianRequest request) {
+        ApiResponse<VeterinarianResponse> apiResponse = new ApiResponse<>();
+        VeterinarianResponse data = veterinarianService.create(request);
+        apiResponse.setResult(data);
+        return apiResponse;
+    }
+
 }

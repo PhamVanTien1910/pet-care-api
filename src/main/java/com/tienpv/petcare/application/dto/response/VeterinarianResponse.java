@@ -1,6 +1,5 @@
 package com.tienpv.petcare.application.dto.response;
 
-import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +7,7 @@ import lombok.Setter;
 @Setter
 public class VeterinarianResponse {
 
+    private Long id;
     private String name;
     private String specialization;
     private String contactInfo;

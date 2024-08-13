@@ -16,12 +16,18 @@ public class VeterinarianConverter implements IVeterinarianConverter {
         response.setName(enity.getName());
         response.setContactInfo(enity.getContactInfo());
         response.setSpecialization(enity.getSpecialization());
+        response.setId(enity.getId());
         return response;
     }
 
     @Override
     public VeterinarianEnity toEntity(VeterinarianRequest request) {
-        return null;
+        VeterinarianEnity enity = new VeterinarianEnity();
+        enity.setClinicAddress(request.getClinicAddress());
+        enity.setName(request.getName());
+        enity.setContactInfo(request.getContactInfo());
+        enity.setSpecialization(request.getSpecialization());
+        return enity;
     }
 
 }
