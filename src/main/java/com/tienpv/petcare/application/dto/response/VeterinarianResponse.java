@@ -7,9 +7,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class VeterinarianResponse {
-
     private String name;
+    private Long id;
     private String specialization;
+
     private String contactInfo;
+
     private String clinicAddress;
 }

@@ -7,7 +7,10 @@ public class PublicEnpoints {
     };
 
     public static final String[] GET_ENDPOINTS = {
-            "/api-docs/**", "/swagger-ui/**"
+            "/api-docs/**", "/swagger-ui/**", "https://pet-care-api-3r68.onrender.com/",
+            "pet-care-api-3r68.onrender.com/",
+            "pet-care-api-3r68.onrender.com",
+            "/pet-care-api/**"
     };
 
     private PublicEnpoints() {
