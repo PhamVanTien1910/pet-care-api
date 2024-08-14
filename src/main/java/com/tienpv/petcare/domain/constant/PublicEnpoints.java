@@ -10,6 +10,7 @@ public class PublicEnpoints {
             "/api-docs/**", "/swagger-ui/**", "https://pet-care-api-3r68.onrender.com/",
             "pet-care-api-3r68.onrender.com/",
             "pet-care-api-3r68.onrender.com",
+            "https://pet-care-api-3r68.onrender.com",
             "/pet-care-api/**"
     };
 
