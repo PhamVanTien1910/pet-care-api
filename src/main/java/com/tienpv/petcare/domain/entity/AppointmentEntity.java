@@ -26,7 +26,7 @@ public class AppointmentEntity extends BaseEntity {
     private String reason;
 
     @Column
-    private Integer status;
+    private Integer status = 1;
 
     @Column(name = "appointment_date")
     private String appointmentDate;
