@@ -9,6 +9,8 @@ services:
     environment:
       MYSQL_DATABASE: petcare
       MYSQL_ROOT_PASSWORD: root
+    networks:
+      - pet_network
 
   spring-app:
     container_name: app
@@ -23,3 +25,10 @@ services:
       - "MYSQL_ROOT_PASSWORD=root"
     depends_on:
       - mysql
+    networks:
+      - pet_network
+
+networks:
+  pet_network:
+    external: true
+

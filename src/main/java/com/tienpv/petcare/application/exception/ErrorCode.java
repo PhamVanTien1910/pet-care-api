@@ -17,7 +17,8 @@ public enum ErrorCode {
     USER_NOT_EXISTED(300, "User not existed", HttpStatus.NOT_FOUND),
     PASSWORD_CONFIRMPASSWORD_INVALID(211, "Password and confirm password do not match", HttpStatus.BAD_REQUEST),
     UNAUTHORIZED(304, "You do not have permission", HttpStatus.FORBIDDEN),
-    ID_NOT_EXISTED(309, "Id not existed", HttpStatus.NOT_FOUND);
+    ID_NOT_EXISTED(309, "Id not existed", HttpStatus.NOT_FOUND),
+    APPOINTMENT_CONFLICT(350, "Appointment already scheduled.", HttpStatus.BAD_REQUEST);
 
     private int code;
     private String message;
