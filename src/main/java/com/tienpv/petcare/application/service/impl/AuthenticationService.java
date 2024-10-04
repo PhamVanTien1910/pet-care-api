@@ -74,7 +74,7 @@ public class AuthenticationService implements IAuthenticationService {
         userEntity = userConverter.toRegisterEntity(request);
         userEntity.setPassword(passwordEncoder.encode(request.getPassword()));
         HashSet<RoleEntity> roles = new HashSet<>();
-        roleRepository.findById(PredefineRole.USER_ROLE).ifPresent(roles::add);
+        roleRepository.findById(PredefineRole.USER_ROLE).ifPresent(roles::add); // optionalVariable.ifPresent(role -> roles.add(role));
         userEntity.setRoles(roles);
         try {
             userEntity = userRepository.save(userEntity);
