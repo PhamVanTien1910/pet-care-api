@@ -34,11 +34,11 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, PublicEnpoints.GET_ENDPOINTS)
                 .permitAll()
                 .anyRequest()
-                .authenticated())
-                .oauth2Login(oauth2login -> {
-                    oauth2login.successHandler(((request, response, authentication) -> response.sendRedirect("/home")));
-                })
-                .formLogin(Customizer.withDefaults());
+                .authenticated());
+//                .oauth2Login(oauth2login -> {
+//                    oauth2login.successHandler(((request, response, authentication) -> response.sendRedirect("/home")));
+//                })
+//                .formLogin(Customizer.withDefaults());
 
         httpSecurity.oauth2ResourceServer(oauth2 -> oauth2.jwt(jwtConfigurer -> jwtConfigurer
                         .decoder(customJwtDecoder)

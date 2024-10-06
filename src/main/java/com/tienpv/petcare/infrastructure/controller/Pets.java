@@ -7,12 +7,14 @@ import com.tienpv.petcare.domain.service.IPetSerivce;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/pets")
 @RequiredArgsConstructor
+@Slf4j
 public class Pets {
 
     @Autowired
@@ -22,6 +24,7 @@ public class Pets {
     @SecurityRequirement(name = "Bearer Authentication")
     @PostMapping
     ApiResponse<PetResponse> create(@RequestBody PetRequest request) {
+        log.info("Controller: create pet");
         ApiResponse<PetResponse> apiResponse = new ApiResponse<>();
         PetResponse data = petSerivce.createPet(request);
         apiResponse.setResult(data);
