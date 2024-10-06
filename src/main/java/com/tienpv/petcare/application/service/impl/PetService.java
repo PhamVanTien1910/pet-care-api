@@ -9,12 +9,14 @@ import com.tienpv.petcare.domain.entity.PetEntity;
 import com.tienpv.petcare.domain.repository.IPetRepository;
 import com.tienpv.petcare.domain.service.IPetSerivce;
 import com.tienpv.petcare.infrastructure.converter.IPetConverter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class PetService implements IPetSerivce {
 
     @Autowired
@@ -28,6 +30,7 @@ public class PetService implements IPetSerivce {
 
     @Override
     public PetResponse createPet(PetRequest request) {
+        log.info("Service: create pet");
         validationService.validatePetRequest(request);
         PetEntity entity = petConverter.toEntity(request);
         try {

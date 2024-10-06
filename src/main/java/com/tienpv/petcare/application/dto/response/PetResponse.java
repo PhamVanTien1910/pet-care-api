@@ -1,11 +1,13 @@
 package com.tienpv.petcare.application.dto.response;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class PetResponse {
     private Long id;
     private String name;
